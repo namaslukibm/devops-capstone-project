@@ -36,16 +36,13 @@ spec:
         value: $(params.branch)
       runAfter:
         - init
+
     - name: lint
       workspaces:
         - name: source
           workspace: pipeline-workspace
       taskRef:
         name: flake8
-    - name: {name here}
-      workspaces:
-        - name: {workspace name here}
-          workspace: pipeline-workspace
       params:
       - name: image
         value: "python:3.9-slim"
